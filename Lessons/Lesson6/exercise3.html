@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+
+  <button onclick="quantity+=4; quantityMessage()">+4</button>
+  <button onclick="quantity+=5; quantityMessage()">+5</button>
+  <button onclick="quantity--; quantityMessage()">Remove from cart<button>
+    <button onclick="quantity-=3; quantityMessage()">-3</button>
+    <button onclick="quantity-=2; quantityMessage()">-2</button>
+
+</body>
+<script>
+  let quantity =0;
+
+  function quantityMessage(){
+  if(quantity>=10) alert("Please Stop add More ,The Cart Full");
+  else if(quantity < 0) alert("Not enough quantity ");
+  else console.log("You can add more");
+  }
+  
+
+</script>
+
+
+
