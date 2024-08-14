@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+
+</body>
+<script>
+function convertIntoFahrenheit(celsius){
+  return (celsius*9 /5)+32;
+}
+
+function convertIntoCelsius(Fahrenheit){
+  return (Fahrenheit -32)*5/9;
+}
+
+function ConvertTemperature(unit , temperature){
+
+  if(unit == 'c') return convertIntoFahrenheit(temperature) +' F';
+  else if(unit == 'f') return convertIntoCelsius(temperature) +' c';
+
+}
+ console.log (ConvertTemperature('c',25));
+ console.log (ConvertTemperature('f',86));
+</script>
+
+
+

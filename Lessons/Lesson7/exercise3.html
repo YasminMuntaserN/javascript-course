@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+
+</body>
+<script>
+  const convertIntoKml =(length) => (length*1.6);
+  const convertIntoMiles =(length) => (length/1.6);
+  const convertIntoFeet =(length , from) =>
+  {
+    if(from == 'miles')
+    { 
+      return (length * 5280) ;
+    }else
+    {
+      return (length * 3281) ;
+    }
+   
+  };
+
+
+
+  function convertLength(length , from , to){
+      if (from !== 'miles' && from !== 'km' && from !== 'ft') {
+          return `Invalid unit: ${from}`;
+        }
+
+        if (to !== 'miles' && to !== 'km' && to !== 'ft') {
+          return `Invalid unit: ${to}`;
+        }
+        if(from == to)
+        {
+          return (length)+to
+        }
+        else if(to == 'km')
+        {
+            return convertIntoKml(length)+to;
+        }
+        else if(to == 'miles')
+        {
+            return convertIntoMiles(length)+to;
+        }
+        else if(to == 'ft')
+        {
+            return convertIntoFeet(length ,from )+to;
+        }
+    }
+    console.log(convertLength(50,'miles','km'));
+    console.log(convertLength(32,'km','miles')); 
+    console.log(convertLength(50,'km','km')); 
+    console.log(convertLength(5,'miles','km')); 
+    console.log(convertLength(5,'miles','ft')); 
+    console.log(convertLength(5,'km','ft')); 
+    console.log(convertLength(5,'1bs','ft')); 
+
+
+
+
+</script>
+
+
+
