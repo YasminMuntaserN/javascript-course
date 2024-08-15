@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+
+</body>
+
+<script>
+const Product ={
+  Name :'basketball',
+  price :500
+}
+
+console.log(Product);
+
+Product.price +=500;
+console.log(Product);
+
+Product['delivery-time'] = '3 days';
+console.log(Product);
+
+const prodect1={Name :'basketball',  price :500 };
+const prodect2={Name :'football',  price :700 };
+
+function comparePrice(product1, product2) {
+    return product1.price > product2.price ? product1 : product2;
+}
+console.log(comparePrice(prodect1, prodect2));
+
+function isSameProduct(product1, product2) {
+    return product1.price == product2.price 
+    && product1.Name == product2.Name ;
+}
+console.log(isSameProduct(Product, prodect1));
+
+const lowerCaseTest ='GOOD Morning'.toLowerCase();
+console.log(lowerCaseTest);
+
+
+function repeatString(times ,word){
+  let str ='';
+  for (let i =1 ; i <= times; i++) {
+    str+=word;
+    }
+return str;
+}
+console.log(repeatString(2 ,'test'));
+console.log('test'.repeat(2));
+
+
+</script>
+
+
+

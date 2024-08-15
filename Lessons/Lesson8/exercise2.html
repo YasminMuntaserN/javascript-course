@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+<button onclick="updateCalculation(1)">1</button>
+<button onclick="updateCalculation(2)">2</button>
+<button onclick="updateCalculation(3)">3</button>
+<button onclick="updateCalculation('+')">+</button>
+<button onclick="calculateResult() ">=</button>
+<p class =".js-result"></p>
+
+</body>
+  <script>
+    let calculation = localStorage.getItem('calculation') || '';
+
+    function displayCalculation(calculation) {
+    document.querySelector('p').innerHTML = calculation;
+  }
+
+    function updateCalculation(value) {
+    calculation += value;
+
+    displayCalculation(calculation);
+
+    saveCalculation();
+  }
+
+  function saveCalculation() {
+    localStorage.setItem('calculation', calculation);
+  }
+
+  function calculateResult() {
+    // Note: eval() takes a string and runs it as code.
+    // Avoid using eval() in real world projects since
+    // it can potentially be given harmful code to run.
+    // Only use eval() for learning purposes.
+    calculation = eval(calculation);
+
+    saveCalculation();
+
+    displayCalculation(calculation);
+  }
+
+  
+
+  </script>
+
+
+
