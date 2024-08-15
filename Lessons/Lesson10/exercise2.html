@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    button{
+      background-color: black;
+      color: rgb(255, 255, 255);
+      padding: 10px;
+      border-style:none ;
+    }
+    .is-toggled{
+      background-color: gray;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="ChangeStatus('.Game');" class ="Game">Gaming</button>
+  <button onclick="ChangeStatus('.Music');" class ="Music">Music</button>
+  <button onclick="ChangeStatus('.Teach');" class ="Teach">Teach</button>
+</body>
+    <script>
+
+      function ChangeStatus(className) {
+            if(document.querySelector(className).classList.contains('is-toggled'))
+            {
+              document.querySelector(className).classList.remove('is-toggled');
+            }else{
+              document.querySelector(className).classList.add('is-toggled');
+            }
+    }
+    
+    </script>
+
+
+

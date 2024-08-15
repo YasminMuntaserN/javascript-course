@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    .cost-input {
+      font-size: 15px;
+      padding: 10px;
+    }
+
+    .calculate-button {
+      background-color: green;
+      color: white;
+      border: none;
+      font-size: 15px;
+      padding: 12px 15px;
+      cursor: pointer;
+    }
+
+    /* Give the error message a red color. */
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+ 
+    <body>
+
+      <p>Amazon Shipping Calculator</p>
+      <input plasholder ="Cost of order" class="cost-input" onkeydown= handleCostKeydown(event);>
+    <button onclick="calculateTotal();" class ="calculate-button">Submit</button>
+    <p class ="js-total-cost"></p>
+    <p class="js-error-message error-message"></p>
+    </body>
+
+
+      <script>
+      function handleCostKeydown(event) {
+          if (event.key === 'Enter') {
+            calculateTotal();
+          }
+        }
+        function Rest(){
+                  // First, reset all previous messages.
+        document.querySelector('.js-total-cost')
+          .innerHTML = '';
+        document.querySelector('.js-error-message')
+          .innerHTML = '';
+        }
+        function calculateTotal() {
+
+          const inputElement = document.querySelector('.cost-input');
+          Rest();
+          
+          let cost = Number(inputElement.value);
+
+          if (cost < 0) {
+          document.querySelector('.js-error-message')
+            .innerHTML = 'Error: cost cannot be less than $0';
+          // If we display an error, we can use return to
+          // end this function immediately. This is called
+          // an "early return" and it makes the code cleaner
+          // because it reduces nesting / indents.
+          return;
+        }
+
+          if (cost < 4000) {
+            cost = cost + 1000;
+          }
+
+          // Convert back to dollars at the end.
+          document.querySelector('.js-total-cost')
+            .innerHTML = `$${cost / 100}`;
+        }
+    
+      </script>
+
+    </script>
+
+
+
