@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+ 
+</body>
+    <script>
+      function addArrays(array1, array2) {
+        const result = [];
+
+        for (let i = 0; i < array1.length; i++) {
+          result.push(array1[i] + array2[i]);
+        }
+
+        return result;
+      }
+
+      console.log(addArrays([1, 1, 2], [1, 1, 3]));
+      console.log(addArrays([1, 2, 3], [4, 5, 6]));
+
+      function CountPositiveNumbers(array1) {
+        let count = 0;
+        for (let i = 0; i < array1.length; i++) {
+          if(array1[i]>0)
+          count++;
+        }
+        return count;
+      }
+      console.log(CountPositiveNumbers([-1, 1, 2,-5,2]));
+
+      function getMinMax(array){
+        if(array == []) return [ , ];  
+
+        let Min = array[0]; let Max = array[0];
+        for (let i = 0; i < array.length; i++) {
+          if(array[i] > Max ){
+            Max = array[i];
+          }else if(array[i] < Min ){
+            Min =array[i];
+          }
+        }
+        return [Min,Max];
+      }
+      let array =getMinMax([1, 1, 2,4,9]);
+      console.log(`Min = ${array[0]} , Max = ${array[1]}`);
+
+      let array1 =getMinMax([]);
+      console.log(`Min = ${array1[0]} , Max = ${array1[1]}`);
+
+
+    </script>
+
+</html>
+
