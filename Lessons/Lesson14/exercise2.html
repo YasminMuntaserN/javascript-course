@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+  
+</body>
+    <script>
+      const addNum =(arr ,num)=>arr.map((item)=> item + num);
+
+      console.log(addNum([1,2,3,4,5] ,2));
+      console.log(addNum([-1,2,3,4,-5] ,2));
+
+      const removeEgg =(arr)=>arr.filter((item)=> item != 'Eggs' );
+      console.log(removeEgg(['Apple','Eggs','ham','Eggs','Eggs' ,'Apple']));
+
+
+      function removeEgg2(foods) {
+        let eggsRemoved = 0;
+
+        return foods.filter((food) => {
+          // If the food is 'egg', we should return false
+          // but only if we haven't removed 2 eggs already.
+          if (food === 'egg' && eggsRemoved < 2) {
+            eggsRemoved++;
+            return false;
+          }
+
+          return true;
+        });
+      }
+      console.log(removeEgg2(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+    </script>
+
+
+
