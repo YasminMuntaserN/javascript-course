@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+  <button class ='btn1-Start' onclick="change();">Start</button>
+
+  <button class ='btn2-Start' onclick="change2();
+  ">Start</button>
+
+  <button class ='btn-AddToCart' onclick="change3();">Add To Cart</button>
+  <p></p>
+
+</head>
+<body>
+  
+</body>
+    <script>
+      function change()
+      {
+        setTimeout(() => {
+          document.querySelector('.btn1-Start').innerHTML='Finished';
+        }, 1000);
+
+      }
+
+      function change2()
+      {
+        document.querySelector('.btn2-Start').innerHTML='Loading...';
+        setTimeout(() => {
+          document.querySelector('.btn2-Start').innerHTML='Finished!';
+        }, 2000);
+
+      }
+
+      function change3()
+      {
+        document.querySelector('p').innerHTML='Added';
+
+          setTimeout(function() {
+            document.querySelector('p').innerHTML = '';
+        }, 2000);
+      }
+
+
+    </script>
+
+
+

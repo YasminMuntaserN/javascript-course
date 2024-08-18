@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>App</title>
+    <button class ='Add' onclick=" MessagesNumber++;">Add</button>
+    <button class ='Remove' onclick=" MessagesNumber--;">Remove</button>
+</head>
+
+    <body>
+
+    </body>
+
+
+    <script>
+        let MessagesNumber =1;
+        ChangeTitle();
+
+      function ChangeTitle()
+      { 
+            setInterval(function() {
+              if(MessagesNumber> 0)
+            document.title = `(${MessagesNumber}) New messages`;
+              else 
+            document.title = 'App';
+            }, 1000);
+      }
+  </script>
+
+
+

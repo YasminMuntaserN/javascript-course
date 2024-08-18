@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+
+</body>
+
+<script>
+  const add = function(){
+        console.log(2+3);
+  }
+  add();
+  add();
+
+  function runTwice (par){
+    par();
+    par();
+  }
+  runTwice(function(){ console.log('Twice');});
+
+  runTwice(add);
+
+</script>
+
+
+
